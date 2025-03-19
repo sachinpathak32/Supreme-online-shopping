@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Online Shopping</title>
+    <meta name="description" content="Shop the finest luxury products online at Supreme Online Shopping. Free shipping worldwide.">
+    <meta name="keywords" content="online shopping, luxury, electronics, fashion, books, accessories">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Header Style */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header .logo img {
+            width: 180px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #d4af37;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #d4af37;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 50px;
+            padding: 8px 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar {
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            width: 350px;
+            font-size: 16px;
+            margin-right: 15px;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-button {
+            background-color: #d4af37;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #b88a2f;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #111;
+            padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            margin: 0 15px;
+        }
+
+        .navbar a:hover {
+            background-color: #d4af37;
+            color: black;
+        }
+
+        /* Product Grid */
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding: 50px 40px;
+            margin-top: 30px;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            border: 2px solid #f4f4f4;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+            transition: transform 0.3s ease;
+        }
+
+        .product:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .product .price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 15px;
+        }
+
+        .product-button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .product-button {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            width: 48%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .product-button:hover {
+            background-color: #d4af37;
+        }
+
+        .buy-now {
+            background-color: #d4af37;
+            color: white;
+            padding: 18px 30px;
+            border-radius: 50px;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .buy-now:hover {
+            background-color: #b88a2f;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 60px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .product-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .search-bar {
+                width: 250px;
+            }
+
+            .navbar a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar a {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .search-bar {
+                width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header with logo and search bar -->
+<header>
+    <div class="logo">
+        <img src="https://scontent.fbwa4-1.fna.fbcdn.net/v/t39.30808-6/377519304_122105896238051871_7952914748268382933_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=blHAA1fbmyQQ7kNvgElMsvg&_nc_oc=Adn-Obfu8pSachbPFl8KZhMFtKRWrtpUH6tvqDfm9AEnDIpomGG3CTu-8auuYum-VSM&_nc_zt=23&_nc_ht=scontent.fbwa4-1.fna&_nc_gid=A7BafJW5JVlrnr46KGCH3A&oh=00_AYHXydRaKwFxitU_5RyoBOWxLlkQ3imlUUjLSuzV2dIr0w&oe=67E05A31" alt="Logo">
+    </div>
+    <h1>Supreme Online Shopping</h1>
+    <div class="search-container">
+        <input class="search-bar" type="text" id="search-bar" placeholder="Search for luxury products...">
+        <button class="search-button" onclick="searchProducts()">Search</button>
+    </div>
+</header>
+
+<!-- Navigation Bar with Categories -->
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Luxury Fashion</a>
+    <a href="#">Electronics</a>
+    <a href="#">Books</a>
+    <a href="#">Accessories</a>
+    <a href="#">Gifts</a>
+    <a href="#">New Arrivals</a>
+</div>
+
+<!-- Product Grid -->
+<div class="product-list" id="product-list">
+    <!-- Dynamic product items will be injected here by JavaScript -->
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Supreme Online Shopping by sachin pathak | All Rights Reserved</p>
+</footer>
+
+<script>
+    let allProducts = [];
+
+    function searchProducts() {
+        const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+        const filteredProducts = allProducts.filter(product => product.name.toLowerCase().includes(searchQuery));
+        displayProducts(filteredProducts);
+    }
+
+    function fetchProducts() {
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(data => {
+                allProducts = data;
+                displayProducts(allProducts);
+            })
+            .catch(error => console.error('Error fetching products:', error));
+    }
+
+    function displayProducts(products) {
+        const productList = document.getElementById('product-list');
+        productList.innerHTML = '';
+        products.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('product');
+            productElement.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="product-info">
+                    <h3>${product.title}</h3>
+                    <p>${product.description.substring(0, 100)}...</p>
+                    <p class="price">$${product.price}</p>
+                    <button class="buy-now" onclick="addToCart(${product.id})">Buy Now</button>
+                </div>
+            `;
+            productList.appendChild(productElement);
+        });
+    }
+
+    function addToCart(productId) {
+        const product = allProducts.find(p => p.id === productId);
+        alert(`${product.name} has been added to your cart.`);
+    }
+
+    fetchProducts();
+</script>
+
+</body>
+</html>
